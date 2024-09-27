@@ -1,13 +1,14 @@
-from flask import Flask, url_for, render_template
+from flask import Flask, url_for, render_template, response
 
 app = Flask(__name__) #__name__ = "__main__" if this is the file that was run.  Otherwise, it is the name of the file (ex. webapp)
 
-@app.route("/")
+@app.route("/response")
 def render_main():
     return render_template('home.html')
 
-@app.route("/p1")
+@app.route("/response")
 def render_page1():
+    # color request.arg 
     return render_template('page1.html')
 
 @app.route("/p2")
